@@ -1,0 +1,7 @@
+qid,question,type,gold_sections,reference_answer,in_scope
+Q01,what are the employer duties regarding protective equipment?,duty,13;19,Employers must provide adequate protective clothing and ensure PPE is used whenever required.,1
+Q02,who appoints safety representatives?,procedure,15,"The Minister shall make regulations to provide for the appointment of safety representatives.",1
+Q03,what are the rules for fencing machinery?,duty,61,"Every flywheel directly connected to any prime mover and every part of a transmission machinery shall be securely fenced.",1
+Q04,what is the penalty for obstructing an inspector?,enforcement,99,"A person who obstructs an inspector commits an offence and is liable to a fine or imprisonment.",1
+Q05,How do I register a company?,out_of_scope,,,0
+Q06,What is the income tax rate in Uganda?,out_of_scope,,,0
