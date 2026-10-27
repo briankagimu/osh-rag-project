@@ -23,7 +23,9 @@ SAMPLES = [
     'who appoints safety representatives?',
     'what are the rules for fencing machinery?',
     'how should accidents be reported?',
-    'what is the penalty for obstructing an inspector?'
+    'what is the penalty for obstructing an inspector?',
+    'What are the fees for workplace registration?', # Added a sample for the new corpus
+    'What are the safety rules for scaffolds?'       # Added a sample for the new corpus
 ]
 
 pick = st.sidebar.selectbox('Sample questions', [''] + SAMPLES)
@@ -46,5 +48,12 @@ if st.button('Ask') and q.strip():
     st.subheader('Sources retrieved')
     for n, cid in enumerate(out['ids'], 1):
         c = R.by_id[cid]
-        with st.expander(f"[{n}] {c['citation']} | {c['section_title']}"):
+        
+        # FIX: Safely handle missing section_title for new PDFs
+        title = c.get('section_title', '')
+        label = f"[{n}] {c['citation']}"
+        if title:
+            label += f" | {title}"
+            
+        with st.expander(label):
             st.write(c['text'])
